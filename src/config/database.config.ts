@@ -21,12 +21,14 @@ const defineConfig = {
   debug: true,
   logger: logger.log.bind(logger),
   metadataProvider: TsMorphMetadataProvider,
+  driverOptions: { connection: { ssl: true } },
+  metadataCache: { enabled: false },
   migrations: {
     tableName: 'mikro_orm_migrations', // name of database table with log of executed transactions
     path: './src/database/migrations', // path to the folder with migrations
     pattern: /^[\w-]+\d+\.ts$/, // regex pattern for the migration files
     transactional: true, // wrap each migration in a transaction
-    disableForeignKeys: true, // wrap statements with `set foreign_key_checks = 0` or equivalent
+    disableForeignKeys: false, // wrap statements with `set foreign_key_checks = 0` or equivalent
     allOrNothing: true, // wrap all migrations in master transaction
     dropTables: true, // allow to disable table dropping
     safe: true, // allow to disable table and column dropping
