@@ -31,4 +31,7 @@ export class UserAddressEntity extends BaseTableEntity {
 
   @Property({ type: 'varchar', nullable: true })
   urban_village: string;
+
+  @Property({ type: 'varchar', length: 32, nullable: true })
+  phone_number: string;
 }
