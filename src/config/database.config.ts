@@ -22,7 +22,7 @@ const defineConfig = {
   logger: logger.log.bind(logger),
   metadataProvider: TsMorphMetadataProvider,
   driverOptions: {
-    connection: { ssl: Boolean(env.IS_DEVELOPMENT) ? true : false },
+    connection: { ssl: env.IS_SSL === 'true' ? true : false },
   },
   metadataCache: { enabled: false },
   migrations: {
