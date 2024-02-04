@@ -21,7 +21,9 @@ const defineConfig = {
   debug: true,
   logger: logger.log.bind(logger),
   metadataProvider: TsMorphMetadataProvider,
-  driverOptions: { connection: { ssl: true } },
+  driverOptions: {
+    connection: { ssl: Boolean(env.IS_DEVELOPMENT) ? true : false },
+  },
   metadataCache: { enabled: false },
   migrations: {
     tableName: 'mikro_orm_migrations', // name of database table with log of executed transactions
@@ -36,5 +38,6 @@ const defineConfig = {
   },
   extensions: [Migrator],
 } as Options;
+// console.log(Boolean(env.IS_DEVELOPMENT));
 
 export default defineConfig;

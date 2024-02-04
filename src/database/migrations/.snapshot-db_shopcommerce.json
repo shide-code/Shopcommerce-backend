@@ -134,6 +134,16 @@
           "primary": false,
           "nullable": true,
           "mappedType": "string"
+        },
+        "phone_number": {
+          "name": "phone_number",
+          "type": "varchar(32)",
+          "unsigned": false,
+          "autoincrement": false,
+          "primary": false,
+          "nullable": false,
+          "length": 32,
+          "mappedType": "string"
         }
       },
       "name": "merchant",
@@ -275,6 +285,16 @@
           "primary": false,
           "nullable": true,
           "mappedType": "string"
+        },
+        "phone_number": {
+          "name": "phone_number",
+          "type": "varchar(32)",
+          "unsigned": false,
+          "autoincrement": false,
+          "primary": false,
+          "nullable": true,
+          "length": 32,
+          "mappedType": "string"
         }
       },
       "name": "users_address",
@@ -389,6 +409,16 @@
           "primary": false,
           "nullable": false,
           "length": 255,
+          "mappedType": "string"
+        },
+        "phone_number": {
+          "name": "phone_number",
+          "type": "varchar(32)",
+          "unsigned": false,
+          "autoincrement": false,
+          "primary": false,
+          "nullable": false,
+          "length": 32,
           "mappedType": "string"
         },
         "password": {

@@ -26,6 +26,9 @@ export class UserEntity extends BaseTableEntity {
   @IsEmail()
   email: string;
 
+  @Property({ type: 'varchar', length: 32 })
+  phone_number: string;
+
   @Property({ type: 'text' })
   password: string;
 
